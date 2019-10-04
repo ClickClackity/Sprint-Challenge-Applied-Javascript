@@ -17,3 +17,65 @@
     <div class="right-button"> > </div>
   </div>
 */
+
+const createCarousel = () => {
+  const carousel = document.createElement('div'),
+    leftButton = document.createElement('div'),
+    imgOne = document.createElement('img'),
+    imgTwo = document.createElement('img'),
+    imgThree = document.createElement('img'),
+    imgFour = document.createElement('img'),
+    rightButton = document.createElement('div');
+    //
+    carousel.classList.add('carousel');
+    leftButton.classList.add('left-button');
+    rightButton.classList.add('right-button');
+    //
+    imgOne.src = './assets/carousel/mountains.jpeg';
+    imgTwo.src = './assets/carousel/computer.jpeg';
+    imgThree.src = './assets/carousel/trees.jpeg';
+    imgFour.src = './assets/carousel/turntable.jpeg';
+    //
+    imgOne.style.display = 'block';
+
+    carousel.appendChild(leftButton);
+    carousel.appendChild(imgOne);
+    carousel.appendChild(imgTwo);
+    carousel.appendChild(imgThree);
+    carousel.appendChild(imgFour);
+    carousel.appendChild(rightButton);
+
+    document.querySelector('.carousel-container').appendChild(carousel);
+};
+
+createCarousel();
+//
+let carouselImgs = Array.from(document.querySelectorAll('.carousel img'));
+let carouselIndex = 0;
+//
+const turnLeft = () => {
+  carouselImgs[carouselIndex].style.display = 'none';
+  //
+  if (carouselIndex == 0) {
+    carouselIndex = carouselImgs.length - 1;
+  } else {
+    carouselIndex--;
+  }
+  //
+  carouselImgs[carouselIndex].style.display = 'block';
+};
+//
+const turnRight = () => {
+  carouselImgs[carouselIndex].style.display = 'none';
+  //
+  if (carouselIndex == carouselImgs.length - 1) {
+    carouselIndex = 0;
+  } else {
+    carouselIndex++;
+  }
+  //
+  carouselImgs[carouselIndex].style.display = 'block';
+};
+//
+document.querySelector('.left-button').addEventListener('click', turnLeft);
+document.querySelector('.right-button').addEventListener('click', turnRight);

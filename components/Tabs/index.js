@@ -19,3 +19,10 @@ const newTab = info => {
     document.querySelector('.topics').appendChild(tab);
 };
 
+axois.get('https://lambda-times-backend.herokuapp.com/topics').then(response => {
+    response.data.topics.forEach(e => {
+        newTab(e);
+    });
+}).catch(error => {
+    return console.log(`Error: ${error}`);
+});

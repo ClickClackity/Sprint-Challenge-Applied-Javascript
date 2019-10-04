@@ -7,3 +7,15 @@
 //
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
+
+
+const newTab = info => {
+    const tab = document.createElement('div');
+
+    tab.classList.add('tab');
+
+    tab.textContent = info;
+
+    document.querySelector('.topics').appendChild(tab);
+};
+

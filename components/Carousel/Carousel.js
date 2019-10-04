@@ -22,4 +22,29 @@ const createCarousel = () => {
   const carousel = document.createElement('div'),
     leftButton = document.createElement('div'),
     imgOne = document.createElement('img'),
-}
+    imgTwo = document.createElement('img'),
+    imgThree = document.createElement('img'),
+    imgFour = document.createElement('img'),
+    rightButton = document.createElement('div');
+    //
+    carousel.classList.add('carousel');
+    leftButton.classList.add('left-button');
+    rightButton.classList.add('right-button');
+    //
+    imgOne.src = './assets/carousel/mountains.jpeg';
+    imgTwo.src = './assets/carousel/computer.jpeg';
+    imgThree.src = './assets/carousel/trees.jpeg';
+    imgFour.src = './assets/carousel/turntable.jpeg';
+    //
+    //xxxx something
+
+    carousel.appendChild(leftButton);
+    carousel.appendChild(imgOne);
+    carousel.appendChild(imgTwo);
+    carousel.appendChild(imgThree);
+    carousel.appendChild(imgFour);
+    carousel.appendChild(rightButton);
+
+    document.querySelector('.carousel-container').appendChild(carousel);
+};
+

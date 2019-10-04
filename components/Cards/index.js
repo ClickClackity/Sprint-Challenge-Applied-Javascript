@@ -21,11 +21,11 @@
 
 const createCard = (title, authImg, authName) => {
     const card = document.createElement('div'),
-        headline = document.createElement('div'),
-        author = document.createElement('div'),
-        authorIC = document.createElement('div'),
-        authI = document.createElement('img'),
-        authN = document.createElement('span');
+    headline = document.createElement('div'),
+    author = document.createElement('div'),
+    authorIC = document.createElement('div'),
+    authI = document.createElement('img'),
+    authN = document.createElement('span');
     //
     headline.textContent = title;
     authI.src = authImg;
@@ -34,7 +34,7 @@ const createCard = (title, authImg, authName) => {
     card.classList.add('card');
     headline.classList.add('headline');
     author.classList.add('author');
-    authorIC.classList.add('authorIC');
+    authorIC.classList.add('img-container');
     //
     card.appendChild(headline);
     card.appendChild(author);
@@ -49,9 +49,9 @@ const createCard = (title, authImg, authName) => {
 axios.get('https://lambda-times-backend.herokuapp.com/articles').then(response => {
     for (a in response.data.articles) {
         response.data.articles[a].forEach(article => {
-            createCard(article["headline"], article.authImg, article.authName);
+            createCard(article["headline"], article.authorPhoto, article.authorName);
         });
     }
 }).catch(error => {
-    console.log(`Error: ${error}`);
+    return `Error: ${error}`;
 });

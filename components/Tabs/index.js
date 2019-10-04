@@ -9,20 +9,20 @@
 //    <div class="tab">topic here</div>
 
 
-const newTab = info => {
+const createTab = topic => {
     const tab = document.createElement('div');
-
+    //
     tab.classList.add('tab');
-
-    tab.textContent = info;
-
+    //
+    tab.textContent = topic;
+    //
     document.querySelector('.topics').appendChild(tab);
 };
 
-axois.get('https://lambda-times-backend.herokuapp.com/topics').then(response => {
-    response.data.topics.forEach(e => {
-        newTab(e);
+axios.get('https://lambda-times-backend.herokuapp.com/topics').then(response => {
+    response.data.topics.forEach(topic => {
+        return createTab(topic);
     });
 }).catch(error => {
-    console.log(`Error: ${error}`);
+    `Error: ${error}`;
 });

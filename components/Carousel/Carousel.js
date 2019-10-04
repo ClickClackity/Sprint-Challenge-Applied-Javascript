@@ -36,7 +36,7 @@ const createCarousel = () => {
     imgThree.src = './assets/carousel/trees.jpeg';
     imgFour.src = './assets/carousel/turntable.jpeg';
     //
-    //xxxx something
+    imgOne.style.display = 'block';
 
     carousel.appendChild(leftButton);
     carousel.appendChild(imgOne);

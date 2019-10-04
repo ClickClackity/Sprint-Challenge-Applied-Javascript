@@ -24,5 +24,5 @@ axois.get('https://lambda-times-backend.herokuapp.com/topics').then(response => 
         newTab(e);
     });
 }).catch(error => {
-    return console.log(`Error: ${error}`);
+    console.log(`Error: ${error}`);
 });

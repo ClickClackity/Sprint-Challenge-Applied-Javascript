@@ -11,9 +11,9 @@
 
 const HeaderComp = () => {
     const header = document.createElement('div'),
-          date = document.createElement('span'),
-          title = document.createElement('h1'),
-          temp = document.createElement('span');
+        date = document.createElement('span'),
+        title = document.createElement('h1'),
+        temp = document.createElement('span');
 
     header.classList.add('header');
     date.classList.add('date');

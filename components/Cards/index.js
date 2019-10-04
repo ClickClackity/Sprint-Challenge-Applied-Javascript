@@ -24,7 +24,7 @@ const createCard = (title, authImg, authName) => {
         headline = document.createElement('div'),
         author = document.createElement('div'),
         authorIC = document.createElement('div'),
-        authI = document.createElement('src'),
+        authI = document.createElement('img'),
         authN = document.createElement('span');
     //
     headline.textContent = title;

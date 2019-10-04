@@ -17,3 +17,9 @@
     <div class="right-button"> > </div>
   </div>
 */
+
+const createCarousel = () => {
+  const carousel = document.createElement('div'),
+    leftButton = document.createElement('div'),
+    imgOne = document.createElement('img'),
+}
